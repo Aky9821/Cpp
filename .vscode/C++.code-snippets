@@ -1,0 +1,50 @@
+{
+	// Place your C++ workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	//Example:
+	"C++": {
+		"prefix": "C",
+		"body": [
+			"#include <bits/stdc++.h>",
+			"",
+			"#define lli long long int",
+			"#define ull unsigned long long int",
+			"#define mod 1000000007",
+			"#define pq priority_queue",
+			"#define pb push_back",
+			"#define ld long double",
+			"#define REP(x,n) for (int x = 0; x < n; x++)",
+			"",
+			"using namespace std;",
+			"",
+			"class Solution {",
+			"\tpublic:",
+			"\t\t$1",
+			"",
+			"};",
+			"",
+			"int main() {",
+			"",
+			"#ifndef ONLINE_JUDGE",
+			"\tfreopen(\"Input1.txt\",\"r\", stdin);",
+			"\tfreopen(\"Output1.txt\",\"w\", stdout);",
+			"#endif",
+			"",
+		
+			"\tint T;",
+			"\tcin >> T;",
+			"\twhile (T--) {",
+			"\t\tSolution ob;",
+			"\t\t$1",
+			"",
+			"\t}",
+			"\treturn 0;",
+			"}",
+		],
+		"description": "Log output to console"
+	}
+}

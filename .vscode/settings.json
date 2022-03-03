@@ -1,0 +1,9 @@
+{
+    "materialTheme.accent": "Purple",
+    "files.associations": {
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "iostream": "cpp"
+    }
+}

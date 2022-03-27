@@ -23,10 +23,17 @@ int main() {
     int T;
     cin >> T;
     while (T--) {
-        Solution ob;
-        char c;
-        cin >> c;
-        cout << c - 96;
+        int n;
+        cin >> n;
+        int ans = 0;
+        if(n<6)
+            ans = 0;
+        else if(n==6)
+            ans = 1;
+        else{
+            n = n - 6;
+            ans = n / 7 + 1;
+        }
+        cout << ans << endl;
     }
-    return 0;
 }

@@ -6,27 +6,30 @@
 #define pq priority_queue
 #define pb push_back
 #define ld long double
-#define REP(x, n) for (int x = 0; x < n; x++)
+#define REP(x,n) for (int x = 0; x < n; x++)
 
 using namespace std;
 
 class Solution {
-   public:
+    public:
+        
+
 };
 
 int main() {
+
 #ifndef ONLINE_JUDGE
-    freopen("Input1.txt", "r", stdin);
-    freopen("Output1.txt", "w", stdout);
+    freopen("Input1.txt","r", stdin);
+    freopen("Output1.txt","w", stdout);
 #endif
 
     int T;
     cin >> T;
     while (T--) {
         Solution ob;
-        char c;
-        cin >> c;
-        cout << c - 96;
+        int x, y;
+        cin >> x >> y;
+        cout << x / (2 * y) << endl;
     }
     return 0;
 }

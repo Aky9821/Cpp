@@ -24,9 +24,17 @@ int main() {
     cin >> T;
     while (T--) {
         Solution ob;
-        char c;
-        cin >> c;
-        cout << c - 96;
+        string s, t;
+        cin >> s >> t;
+        string ans = "";
+        int l = s.length();
+        REP(x, l) {
+            if (s[x] == t[x])
+                ans += "G";
+            else
+                ans += "B";
+        }
+        cout << ans << endl;
     }
     return 0;
 }

@@ -24,9 +24,12 @@ int main() {
     cin >> T;
     while (T--) {
         Solution ob;
-        char c;
-        cin >> c;
-        cout << c - 96;
+        int n, x, k;
+        cin >>n>>x>>k;
+        int fill = k / x;
+        if (fill > n)
+            fill = n;
+        cout << fill << endl;
     }
     return 0;
 }

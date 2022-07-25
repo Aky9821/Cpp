@@ -38,7 +38,7 @@
 			"\tint T;",
 			"\tcin >> T;",
 			"\twhile (T--) {",
-			"\t\tSolution ob;",
+			"\t\tSolution ob;",q
 			"\t\t$1",
 			"",
 			"\t}",

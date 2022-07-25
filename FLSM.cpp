@@ -43,10 +43,10 @@ int binaryToDecimal(string s) {
 }
 
 int main() {
-#ifndef ONLINE_JUDGE
+/*#ifndef ONLINE_JUDGE
     freopen("Input1.txt", "r", stdin);
     freopen("Output1.txt", "w", stdout);
-#endif
+#endif*/
 
     Solution ob;
     int ip1, ip2, ip3, ip4;

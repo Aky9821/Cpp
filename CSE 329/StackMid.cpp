@@ -19,7 +19,7 @@ struct Node {
     Node *next;
     Node *prev;
 };
-Node *head = NULL, *dummy = NULL,*mid=NULL;
+Node *head = NULL, *dummy = NULL, *mid = NULL;
 int s = 0;
 Node *addNode(int n) {
     Node *node = new Node();
@@ -29,12 +29,15 @@ Node *addNode(int n) {
     return node;
 }
 
-bool isEmpty(){
+bool isEmpty() {
     return dummy->next == NULL;
 }
 
-int mid(){
-    if()
+int getMid() {
+    if (isEmpty())
+        return -1;
+    cout << mid->data << endl;
+    return mid->data;
 }
 void print() {
     if (dummy->next) {
@@ -54,16 +57,25 @@ void push(int n) {
         dummy->next = node;
         node->prev = dummy;
         mid = node;
+        s++;
     } else {
         node->next = dummy->next;
         dummy->next->prev = node;
         node->prev = dummy;
         dummy->next = node;
-        if(s%2==0)
+        s++;
+        if (s % 2 == 0)
             mid = mid->prev;
     }
+
     print();
+    getMid();
 }
+
+int top(){
+    if(isEmpty())
+}
+
 
 int main() {
 #ifndef ONLINE_JUDGE
@@ -76,7 +88,7 @@ int main() {
     while (T--) {
         Solution ob;
         dummy = addNode(-1);
-        REP(x,10)
+        REP(x, 10)
         push(x);
     }
     return 0;

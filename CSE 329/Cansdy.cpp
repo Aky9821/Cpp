@@ -14,6 +14,15 @@ class Solution {
    public:
 };
 
+void candy(int w, int price, int &ans) {
+    int c = w / price;
+    if (c == 0)
+        return;
+    w = w % price;
+    ans += c;
+    w += c;
+    candy(w, price, ans);
+}
 
 int main() {
 #ifndef ONLINE_JUDGE
@@ -25,16 +34,11 @@ int main() {
     cin >> T;
     while (T--) {
         Solution ob;
-        int size = 5;
-        int ar[size] = {1, 2, 3, 4, 5};
-        int n, index;
-        cin >> n >> index;
-        for (int x = size - 1; x > index; x--) {
-            ar[x] = ar[x - 1];
-        }
-        ar[index] = n;
-        for (int x = 0; x < size; x++)
-            cout << ar[x] << endl;
+        int money, price, wrap;
+        cin >> money >> price >> wrap;
+        int ans = money / price;
+        candy(ans, wrap, ans);
+        cout << ans;
     }
     return 0;
 }

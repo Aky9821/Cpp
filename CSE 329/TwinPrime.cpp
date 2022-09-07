@@ -1,19 +1,16 @@
 #include <bits/stdc++.h>
 
+using namespace std;
 #define lli long long int
 #define ull unsigned long long int
 #define mod 1000000007
 #define pq priority_queue
 #define pb push_back
 #define ld long double
-#define REP(x,n) for (int x = 0; x < n; x++)
-
-using namespace std;
+#define REP(x, n) for (int x = 0; x < n; x++)
 
 class Solution {
-    public:
-        
-
+   public:
 };
 void sieve(int n) {  // O(nlog log n)
     vector<int> v;
@@ -32,16 +29,15 @@ void sieve(int n) {  // O(nlog log n)
         if (v[x])
             p.pb(x);
     }
-    REP(x,p.size()-1){
-        if(p[x]-p[x+1]==-2)
+    REP(x, p.size() - 1) {
+        if (p[x] - p[x + 1] == -2)
             cout << p[x] << " " << p[x + 1] << endl;
     }
-    }
-    int main() {
-
+}
+int main() {
 #ifndef ONLINE_JUDGE
-    freopen("Input1.txt","r", stdin);
-    freopen("Output1.txt","w", stdout);
+    freopen("Input1.txt", "r", stdin);
+    freopen("Output1.txt", "w", stdout);
 #endif
 
     int T;

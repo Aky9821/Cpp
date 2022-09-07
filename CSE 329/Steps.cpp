@@ -14,7 +14,15 @@ class Solution {
    public:
 };
 
-
+int minSteps(int n) {
+    int x = 1;
+    while(true)  {
+        if (n >= -x * (x + 1) / 2 && n <= x * (x + 1) / 2 && (n & 1) == ((x * (x + 1) / 2) & 1)) {
+            return x;
+        }
+       x++;
+    }
+}
 int main() {
 #ifndef ONLINE_JUDGE
     freopen("Input1.txt", "r", stdin);
@@ -25,16 +33,12 @@ int main() {
     cin >> T;
     while (T--) {
         Solution ob;
-        int size = 5;
-        int ar[size] = {1, 2, 3, 4, 5};
-        int n, index;
-        cin >> n >> index;
-        for (int x = size - 1; x > index; x--) {
-            ar[x] = ar[x - 1];
+        int n;
+
+        REP(x, 100) {
+            if (x != 0)
+                cout << x << " " << minSteps(x) << endl;
         }
-        ar[index] = n;
-        for (int x = 0; x < size; x++)
-            cout << ar[x] << endl;
     }
     return 0;
 }

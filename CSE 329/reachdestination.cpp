@@ -13,8 +13,17 @@ using namespace std;
 class Solution {
    public:
 };
-
-
+void DFS(int x, int y, int dx, int dy, bool &ans) {
+    if (x > dx || y > dy) {
+        return;
+    }
+    if (x == dx && y == dy){
+        ans = true;
+        return;
+    }
+    DFS(x + 1, y, dx, dy, ans);
+        DFS(x, y + 1, dx, dy, ans);
+}
 int main() {
 #ifndef ONLINE_JUDGE
     freopen("Input1.txt", "r", stdin);
@@ -25,16 +34,17 @@ int main() {
     cin >> T;
     while (T--) {
         Solution ob;
-        int size = 5;
-        int ar[size] = {1, 2, 3, 4, 5};
-        int n, index;
-        cin >> n >> index;
-        for (int x = size - 1; x > index; x--) {
-            ar[x] = ar[x - 1];
+        int sx, sy, dx, dy;
+        cin >> sx >> sy >> dx >> dy;
+        bool flag = true;
+        if (sx > dx || sy > dy)
+            flag = false;
+        else {
+            flag = false;
+            DFS(sx, sy, dx, dy, flag);
         }
-        ar[index] = n;
-        for (int x = 0; x < size; x++)
-            cout << ar[x] << endl;
+
+        cout << flag;
     }
     return 0;
 }

@@ -27,8 +27,20 @@ int main() {
     cin >> T;
     while (T--) {
         Solution ob;
-        
-
+        int n;
+        cin >> n;
+        vector<lli> v;
+        map<lli, lli> mp;
+        REP(x,n){
+            lli t;
+            cin >> t;
+            mp[t]++;
+        }
+        lli ans = 0;
+        for(auto it:mp){
+            ans += ((it.second * (it.second - 1)) / 2);
+        }
+        cout << ans << endl;
     }
     return 0;
 }

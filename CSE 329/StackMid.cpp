@@ -32,13 +32,21 @@ Node *addNode(int n) {
 bool isEmpty() {
     return dummy->next == NULL;
 }
+int getTop() {
+    if (isEmpty())
+        return -1;
+
+    cout << "Top : " << dummy->next->data << endl;
+    return dummy->next->data;
+}
 
 int getMid() {
     if (isEmpty())
         return -1;
-    cout << mid->data << endl;
+    cout << "Mid : " << mid->data << endl;
     return mid->data;
 }
+
 void print() {
     if (dummy->next) {
         Node *node = dummy->next;
@@ -70,12 +78,48 @@ void push(int n) {
 
     print();
     getMid();
+    getTop();
 }
-
-int top(){
-    if(isEmpty())
+void deleteMid() {
+    if (isEmpty())
+        return;
+    if (s > 1) {
+        Node *prev = mid->prev;
+        prev->next = mid->next;
+        mid->next->prev = prev;
+        s--;
+        if (s % 2 == 0) {
+            mid = prev;
+        } else {
+            mid = prev->next;
+        }
+    } else {
+        dummy->next = NULL;
+        mid = NULL;
+        s--;
+    }
+    print();
+    getMid();
 }
-
+int pop() {
+    if (!isEmpty()) {
+        getTop();
+        if (s > 1) {
+            dummy->next = dummy->next->next;
+            dummy->next->prev = dummy;
+            s--;
+            if (s % 2 != 0) {
+                if (mid->next)
+                    mid = mid->next;
+            }
+        } else {
+            mid = NULL;
+            dummy->next = NULL;
+        }
+        print();
+        getMid();
+    }
+}
 
 int main() {
 #ifndef ONLINE_JUDGE
@@ -90,6 +134,20 @@ int main() {
         dummy = addNode(-1);
         REP(x, 10)
         push(x);
-    }
+        // REP(x, 10)
+        // pop();
+        REP(x, 5)
+        deleteMid();
+        pop();
+        deleteMid();
+        pop();
+        deleteMid();
+        deleteMid();
+        push(11);
+        push(33);
+        deleteMid();
+
+        deleteMid();
+        }
     return 0;
 }

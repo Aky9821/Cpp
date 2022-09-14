@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "ostream": "cpp",
-        "numbers": "cpp"
+        "numbers": "cpp",
+        "*.tcc": "cpp",
+        "random": "cpp",
+        "regex": "cpp",
+        "type_traits": "cpp"
     }
 }

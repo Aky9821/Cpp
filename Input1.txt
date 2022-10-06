@@ -1,3 +1,11 @@
+5
+1
+a
 2
-2
-3
+ba
+10
+codeforces
+26
+abcdefghijklmnopqrstuvwxyz
+26
+abcdefghijklmnopqrstuvwxzy

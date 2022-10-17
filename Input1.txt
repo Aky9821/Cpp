@@ -1,11 +1,2 @@
-5
-1
-a
-2
-ba
-10
-codeforces
-26
-abcdefghijklmnopqrstuvwxyz
-26
-abcdefghijklmnopqrstuvwxzy
+20
+H e L L O 2

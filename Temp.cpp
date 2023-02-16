@@ -1,63 +1,36 @@
-#include <cstdio>
-#include <iostream>
-#define INT_MAX 2000000000
+#include <bits/stdc++.h>
+
+#define lli long long int
+#define ull unsigned long long int
+#define mod 1000000007
+#define pq priority_queue
+#define pb push_back
+#define ld long double
+#define REP(x, n) for (int x = 0; x < n; x++)
 
 using namespace std;
 
-long long int functn(long long int temp)  // similar to greedy Coin-change
-{
-    long long int x = 0;
-    if (temp >= 5) {
-        x = temp / 5;
-        temp = temp % 5;
-    }
-    if (temp >= 2) {
-        x += temp / 2;
-        temp = temp % 2;
-    }
-    x += temp;
-    return x;
-}
-
-int array_smallest(long long int array[], int array_length) {
-    long long int smallest = INT_MAX;
-    long long int i;
-    for (i = 0; i < array_length; i++) {
-        if (array[i] < smallest) {
-            smallest = array[i];
-        }
-    }
-    return smallest;
-}
-
-long long int mod(long long int x) {
-    if (x > 0)
-        return x;
-    else
-        return (-1) * x;
-}
+class Solution {
+   public:
+};
 
 int main() {
-    long long int T, N, i, j, min, sum, temp;
+#ifndef ONLINE_JUDGE
+    freopen("Input1.txt", "r", stdin);
+    freopen("Output1.txt", "w", stdout);
+#endif
+
+    int T;
     cin >> T;
     while (T--) {
-        min = 1000000;
-        cin >> N;
-        int A[N];
-        for (i = 0; i < N; i++) {
-            cin >> A[i];
-            if (A[i] < min)
-                min = A[i];
+        int a, b;
+        cin >> a >> b;
+        if (a == 0 || b == 0)
+            cout << abs(a - b) << endl;
+        else {
+            int x = abs(a - b);
+            cout << abs(x - 1) << endl;
         }
-        long long int sum[6];
-        for (j = 0; j <= 5; j++) {
-            sum[j] = 0;
-            for (i = 0; i < N; i++) {
-                temp = mod(A[i] - (min - j));
-                sum[j] = sum[j] + functn(temp);
-            }
-        }
-        cout << array_smallest(sum, 6) << endl;
     }
     return 0;
 }
